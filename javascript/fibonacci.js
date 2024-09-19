@@ -1,7 +1,14 @@
+// Input nilai n 
+// to create output interface
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
 //Function to generate Fibonacci sequence up to the nth number
 function fibonacci(n) {
     let sequence = [];    //variable sequence is declared as an empty array
-    let a = 0, b = 1, nexttemp;  //declare a=0 and b=2 pastu nexttemp tu declared but not initialized.will be used to temporarily hold the value of a while updating a and b
+    let a = 0, b = 1, nexttemp;  //declare a=0 and b=1 pastu nexttemp tu declared but not initialized.will be used to temporarily hold the value of a while updating a and b
 
     for (let i = 0; i < n; i++) {   //for loop is used to iterate n times
         sequence.push(a);       //The current Fibonacci number (a) is added to the sequence array. The push() method adds elements to the end of the array
@@ -13,12 +20,7 @@ function fibonacci(n) {
     return sequence;
 }
 
-// Input nilai n 
-// to create output interface
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+
 
 readline.question('Masukkan nilai n: ', n => {
     console.log(`Urutan Fibonacci hingga bilangan ke-${n}: ${fibonacci(parseInt(n)).join(', ')}`);
